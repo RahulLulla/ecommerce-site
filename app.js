@@ -5,7 +5,7 @@ const cors = require("cors");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const path = require("path");
-
+require("dotenv").config();
 global.rootPath = path.resolve(__dirname);
 
 const session = require("express-session");

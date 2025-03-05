@@ -1,12 +1,10 @@
 const Pool = require("pg").Pool;
-const path = require("path");
-const data = require(path.join(global.rootPath, "database_info.json"));
 
 const pool = new Pool({
-  user: data["user"],
-  host: data["host"],
-  database: data["database"],
-  password: data["password"],
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
   port: 5432,
 });
 

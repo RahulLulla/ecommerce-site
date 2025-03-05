@@ -1,0 +1,27 @@
+.curated_product_container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+/* 
+https://codepen.io/burakcanince/pen/orVzRP
+https://swiperjs.com/swiper-api
+https://swiperjs.com/swiper-api#free-mode
+ */
+
+.slide_button {
+  position: relative !important;
+  color: grey !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.swiper_custom:hover {
+  transform: scale(0.2);
+}
+
+.swiper-scrollbar-drag {
+  color: red !important;
+}

@@ -1,0 +1,16 @@
+.home {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main_section {
+  margin-top: 2rem;
+}
+
+.footer_section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,23 @@
+.swiper-scrollbar-drag {
+  cursor: pointer;
+  border-radius: 0.1%;
+  margin-top: 27px;
+  height: 3px !important;
+  background-color: rgb(59, 57, 57);
+}
+
+.swiper-scrollbar-drag:hover {
+  height: 6px !important;
+}
+
+.swiper-scrollbar {
+  height: 30px !important;
+  border-radius: 0%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid grey;
+}
+
+/* height: 4px; */
+/* transform: scale(1.05) !important; */
+/* border-bottom: 1.5px solid grey; */

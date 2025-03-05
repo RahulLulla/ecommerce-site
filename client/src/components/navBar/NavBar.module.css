@@ -1,0 +1,27 @@
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0rem;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar_container:hover,
+.navbar_container:focus {
+  background-color: white;
+}
+
+.navbar_elements {
+  font-family: SoleilBold;
+}
+
+.title_container {
+  margin-left: 2rem;
+  justify-items: center;
+}
+
+.navbar_icons {
+  display: flex;
+  margin-right: 2rem;
+}
+/*  border: 1px solid red; */
