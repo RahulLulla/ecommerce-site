@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeBanner from "../components/home/HomeBanner";
-import Footer from "../components/footer/footer";
 import MainSection from "../components/mainSection/MainSection";
 import styles from "./HomePage.module.css";
 import NavBar from "../components/navBar/NavBar";
+import Footer from "../components/footer/Footer";
 
 const HomePage = () => {
+  useEffect(() => {
+    1 === 1;
+  });
+
   return (
     <div id="home" className={styles.home}>
       <NavBar />

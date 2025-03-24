@@ -1,0 +1,10 @@
+.sort_selection_box {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.sort_selection_result {
+  align-content: center;
+  font-family: "SoleilLight";
+  margin-right: 20px;
+}

@@ -1,0 +1,16 @@
+.collection_content_item {
+  justify-items: center;
+}
+
+.collection_title {
+  align-content: center;
+  justify-content: center;
+  font-family: SoleilBold;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.collection_details {
+  font-family: SoleilLight;
+  padding-top: 20px;
+}

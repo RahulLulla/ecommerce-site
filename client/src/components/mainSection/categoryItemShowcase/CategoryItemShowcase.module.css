@@ -1,0 +1,49 @@
+.category_container {
+  margin: 2rem 0;
+}
+
+.category_name {
+  margin-bottom: 1rem;
+}
+
+.category_figure {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.category_image {
+  width: inherit;
+  height: inherit;
+  object-fit: contain;
+}
+
+.category_image_hover {
+  transform: scale(1.08);
+  transition: 200ms ease-in-out;
+}
+
+.category_options {
+  display: flex;
+  position: absolute;
+}
+
+.category_option {
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0.6rem 1.2rem;
+  background-color: white;
+}
+
+.category_option:hover {
+  color: white;
+  background-color: black;
+}
+
+.category_option_title {
+  color: inherit;
+  font-family: SoleilLight;
+}

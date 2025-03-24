@@ -1,0 +1,7 @@
+.product_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 50px;
+  margin-bottom: 2rem;
+}

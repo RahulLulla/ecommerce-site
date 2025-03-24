@@ -1,0 +1,40 @@
+.footer_content {
+  font-family: SoleilLight;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  margin-top: 2rem;
+  background-color: black;
+}
+
+.footer_box {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_link {
+  text-decoration: none;
+}
+
+.footer_element {
+  color: white;
+  padding: 0.7rem 2rem;
+}
+
+.copyright_content {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer_link,
+.footer_font {
+  color: white !important;
+}
+
+.social_icon {
+  margin-right: 10px;
+}

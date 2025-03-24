@@ -1,0 +1,15 @@
+.product_details_content {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 2rem;
+}
+
+.product_details_title {
+  font-size: 0.95rem;
+  font-family: SoleilRegular;
+}
+
+.product_gallery_info {
+  display: flex;
+  width: 100%;
+}

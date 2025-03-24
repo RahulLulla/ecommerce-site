@@ -1,15 +1,19 @@
 import { Popper, Paper, MenuItem, Grid2, ListItem } from "@mui/material";
 import styles from "./SubCategoryOptions.module.css";
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const SubCategoryOptions = ({
   categories,
   currentCategory,
-  handleSubCategory,
   handleMouseLeave,
   anchorEl,
 }) => {
+  const [, setCurrentSubCategory] = useState(null);
+  const handleSubCategory = (subCategory) => {
+    setCurrentSubCategory(subCategory);
+  };
+
   const showSubCategory = ([subCategory, subCategoryValues], index) => (
     <Grid2 xs={10} key={index} className={styles.navbar_subcategory_list}>
       <ListItem className={styles.navbar_subcategory_header}>

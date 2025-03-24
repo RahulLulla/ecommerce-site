@@ -1,0 +1,26 @@
+.product_items_container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+.product_items_row {
+  margin: 3rem 0 5.5rem;
+  /* padding: 0 0 2rem; */
+}
+
+.slide_button {
+  position: relative !important;
+  color: grey !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.swiper_custom:hover {
+  transform: scale(0.2);
+}
+
+.swiper-scrollbar-drag {
+  color: red !important;
+}

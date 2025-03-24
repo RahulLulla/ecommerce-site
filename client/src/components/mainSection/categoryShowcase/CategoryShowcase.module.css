@@ -1,0 +1,20 @@
+.category_content {
+  text-align: center;
+  margin: 0 auto;
+  width: 85%;
+  margin-top: 5.5rem;
+}
+
+.content_title {
+  font-family: SoleilBold;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.content_elements {
+  font-family: SoleilLight;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

@@ -1,0 +1,60 @@
+.filter_container {
+  /* margin: 1rem 0; */
+  font-family: SoleilBold;
+  margin-bottom: 2rem;
+}
+
+.filter_line {
+  margin-bottom: 2rem;
+}
+
+.filter_label {
+  padding: 0.5rem 0;
+  font-family: SoleilLight;
+  font-weight: 100;
+  display: flex;
+}
+
+.filter_item {
+  margin-left: 10px;
+  padding-top: 0.5rem;
+}
+
+.filter_title {
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.filter_checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black; /* Black border */
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: white; /* Default background */
+}
+
+.filter_checkbox:checked {
+  background-color: black; /* Black background when checked */
+  border-color: black;
+}
+
+.filter_checkbox::after {
+  content: "✔"; /* Unicode checkmark */
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.filter_checkbox:checked::after {
+  display: block;
+}

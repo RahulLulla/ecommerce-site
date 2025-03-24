@@ -9,39 +9,31 @@ import NavBarIcon from "./navBarIcons/NavBarIcons";
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [currentCategory, setCurrentCategory] = useState(null);
-  const [, setCurrentSubCategory] = useState(null);
 
-  const handleMouseEnter = (event, category) => {
+  const handleMouseEnter = (event, main_category) => {
     setAnchorEl(event.currentTarget);
-    setCurrentCategory(category);
+    setCurrentCategory(main_category);
   };
 
   const handleMouseLeave = () => {
     setAnchorEl(null);
-    setCurrentCategory(null);
+    // setCurrentCategory(null);
   };
-
-  const handleSubCategory = (subCategory) => {
-    setCurrentSubCategory(subCategory);
-  };
-
-  const highlight = anchorEl ? style.navbar_focus : "";
 
   return (
-    <div id="navbar" className={`${style.navbar_container} ${highlight}`}>
+    <div id="navbar" className={`${style.navbar_container}`}>
       <div className={style.title_container}>
         <AppTitle />
       </div>
       <div className={style.navbar_elements}>
         <NavBarItems
-          categories={categories}
+          main_categories={Object.keys(categories)}
           handleMouseEnter={handleMouseEnter}
         />
         <SubCategoryOptions
           anchorEl={anchorEl}
           categories={categories}
           currentCategory={currentCategory}
-          handleSubCategory={handleSubCategory}
           handleMouseLeave={handleMouseLeave}
         />
       </div>
