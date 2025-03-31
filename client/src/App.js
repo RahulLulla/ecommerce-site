@@ -1,19 +1,19 @@
 import "./index.css";
 import "./reset.css";
 import "./App.css";
-import React from "react";
-import HomePage from "./pages/HomePage";
-import ProductsPage from "./pages/ProductsPage";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
+import routes from "./routes";
 
 const App = () => {
+  const routesDetails = routes.map(({ path, element }, index) => (
+    <Route key={index} path={path} element={element} />
+  ));
   return (
-    <Routes>
-      <Route path="/" exact element={<HomePage />} />
-      <Route path="products" element={<ProductsPage />} />
-      <Route path="product-details" element={<ProductDetailsPage />} />
-    </Routes>
+    <>
+      <Suspense fallback={<div>Loading...</div>}></Suspense>
+      <Routes>{routesDetails}</Routes>
+    </>
   );
 };
 

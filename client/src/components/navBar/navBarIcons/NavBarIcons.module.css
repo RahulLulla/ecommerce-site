@@ -1,13 +1,22 @@
-.navbar_login_icon {
-  margin-right: 10px;
-  padding: 1px;
+.navbar_icon_container {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar_cart_icon {
-  padding: 1px;
+  margin-left: 20px;
 }
 
 .navbar_cart_icon:hover,
 .navbar_login_icon:hover {
   cursor: pointer;
+}
+
+.navbar_signin {
+  color: inherit;
+  font-size: 0.9rem;
+  font-family: "SoleilBold";
+  text-transform: uppercase;
 }

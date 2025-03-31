@@ -1,0 +1,44 @@
+* {
+  font-family: SoleilLight;
+}
+
+.product_info_content {
+  padding: 0 20px;
+}
+
+.product_info_title {
+  font-family: SoleilBold;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.product_info_desc_box {
+  margin-top: 1rem;
+}
+
+.product_info_price,
+.product_info_desc {
+  font-family: SoleilLight;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.product_info_price {
+  font-family: SoleilBold;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.product_info_purchase_box {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+}
+
+.purchase_button {
+  border-radius: 50rem;
+}
+
+.product_info_spec_box {
+  margin-top: 1.5rem;
+}

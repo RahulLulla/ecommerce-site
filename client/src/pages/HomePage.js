@@ -7,7 +7,7 @@ import Footer from "../components/footer/Footer";
 
 const HomePage = () => {
   useEffect(() => {
-    1 === 1;
+    console.log("Fetch");
   });
 
   return (

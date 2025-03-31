@@ -21,11 +21,11 @@ const NavBar = () => {
   };
 
   return (
-    <div id="navbar" className={`${style.navbar_container}`}>
+    <div id="navbar" className={`${style.navbar_main_container}`}>
       <div className={style.title_container}>
         <AppTitle />
       </div>
-      <div className={style.navbar_elements}>
+      <div className={style.elements_container}>
         <NavBarItems
           main_categories={Object.keys(categories)}
           handleMouseEnter={handleMouseEnter}
@@ -37,7 +37,7 @@ const NavBar = () => {
           handleMouseLeave={handleMouseLeave}
         />
       </div>
-      <div className={style.navbar_icons}>
+      <div className={style.icons_container}>
         <NavBarIcon />
       </div>
     </div>

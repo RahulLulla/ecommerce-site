@@ -4,7 +4,7 @@
   margin-top: 2rem;
 }
 
-.product_details_title {
+.product_details_nav {
   font-size: 0.95rem;
   font-family: SoleilRegular;
 }
@@ -12,4 +12,23 @@
 .product_gallery_info {
   display: flex;
   width: 100%;
+  margin: 50px 0;
 }
+
+.product_gallery_item {
+  width: 57%;
+  margin-right: 1.5rem;
+  /* position: sticky;
+  height: 90vh; */
+}
+
+.product_description_item {
+  width: 43%;
+  /* overflow-y: auto;
+  height: 90vh; */
+}
+
+/* .scroll_guard {
+  position: sticky;
+  top: 0;
+} */

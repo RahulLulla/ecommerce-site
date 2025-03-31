@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./RecommendedProducts.module.css";
-// import { featuredForHer as recommendedProducts } from "../../constants/suggestions";
+import ProductItemsShowcase from "../../common/productItemsShowcase/ProductItemsShowcase";
+import { useSelector } from "react-redux";
+import { getRecommendedProducts } from "../../../features/recommendedProducts/recommendedProductsSlice";
 
 const RecommendedProducts = () => {
-  // const productDisplay = recommendedProducts.map((product) => <></>);
+  const recommendedProducts = useSelector(getRecommendedProducts);
   return (
-    <div>
-      <div className={styles.d}></div>
+    <div className={styles.recommended_product_content}>
+      <h1 className={styles.recommended_product_title}>You May Also Like</h1>
+      <div>
+        <ProductItemsShowcase products={recommendedProducts} />
+      </div>
     </div>
   );
 };

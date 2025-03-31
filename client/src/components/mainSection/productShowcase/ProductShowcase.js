@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styles from "./ProductShowcase.module.css";
-import ProductItemsShowcase from "../productItemsShowcase/ProductItemsShowcase";
+import ProductItemsShowcase from "../../common/productItemsShowcase/ProductItemsShowcase";
 
 const ProductShowcase = ({ featured, bestSellers, newArrivals }) => {
   const options = ["Best Sellers", "Featured", "New Arrivals"];
@@ -31,7 +31,9 @@ const ProductShowcase = ({ featured, bestSellers, newArrivals }) => {
   return (
     <>
       <div className={styles.nav_title_container}>{navigationOptions}</div>
-      <ProductItemsShowcase products={products} />
+      <div className={styles.product_items_container}>
+        <ProductItemsShowcase products={products} />
+      </div>
     </>
   );
 };

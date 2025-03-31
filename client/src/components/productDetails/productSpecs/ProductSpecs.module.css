@@ -1,0 +1,25 @@
+.specs_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  row-gap: 30px;
+}
+
+.specs_item {
+  width: 49%;
+}
+
+.specs_value,
+.specs_title {
+  font-size: 0.9rem;
+}
+
+.specs_title {
+  font-family: SoleilBold;
+}
+
+.specs_value {
+  font-family: SoleilRegular;
+  color: #666;
+}

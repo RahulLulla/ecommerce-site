@@ -3,18 +3,19 @@
 import React, { useState } from "react";
 import styles from "./FilterSection.module.css";
 import FilterOptions from "../filterOptions/FilterOptions";
+import FilterPriceRange from "../filterPriceRange/FilterPriceRange";
 
 const FilterSection = ({ onFilterChange }) => {
-  const [price, setPrice] = useState("");
-  const [materials, setMaterials] = useState([]);
-  const [colors, setColors] = useState([]);
-
-  const priceOptions = ["Under $50", "$50 - $100", "$100 - $200", "Above $200"];
+  const priceRange = [0, 1000];
   const materialOptions = ["Cotton", "Leather", "Denim", "Polyester"];
   const colorOptions = ["Red", "Blue", "Green", "Black", "White"];
 
+  const [price, setPrice] = useState(priceRange);
+  const [materials, setMaterials] = useState([]);
+  const [colors, setColors] = useState([]);
+
   const handlePriceChange = (value) => {
-    setPrice((prev) => (prev === value ? null : value));
+    setPrice(value);
     onFilterChange((prev) => ({
       ...prev,
       price: value,
@@ -47,11 +48,11 @@ const FilterSection = ({ onFilterChange }) => {
 
   return (
     <div className={styles.filter_content}>
-      <FilterOptions
+      <FilterPriceRange
         filterTitle={"Price"}
-        optionsArray={priceOptions}
+        price={price}
+        priceRange={priceRange}
         handleOptionChange={handlePriceChange}
-        checkCondition={(option) => option === price}
       />
       <FilterOptions
         filterTitle={"Material"}

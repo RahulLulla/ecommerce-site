@@ -24,3 +24,8 @@
   text-underline-offset: 5px;
   color: #003150;
 }
+
+.product_items_container {
+  width: 85%;
+  margin: 0 auto;
+}

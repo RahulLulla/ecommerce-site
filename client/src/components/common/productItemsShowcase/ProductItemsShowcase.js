@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProductElement from "../productElement/ProductElement";
 import { useIntersection } from "react-use";
 import styles from "./ProductItemsShowcase.module.css";
@@ -13,6 +13,7 @@ import "./ProductItemsShowcase.css";
 const ProductItemsShowcase = ({ products }) => {
   const ref = useRef(null);
   const swiperRef = useRef(null);
+  const [blurStyle, setBlurStyle] = useState();
 
   const intersection = useIntersection(ref, {
     root: null,
@@ -23,6 +24,10 @@ const ProductItemsShowcase = ({ products }) => {
   useEffect(() => {
     swiperRef.current?.update();
     swiperRef.current?.slideTo(0, 0);
+    setBlurStyle(styles.container_blur_style);
+    setTimeout(() => {
+      setBlurStyle("");
+    }, 200);
   }, [products]);
 
   return (
@@ -40,7 +45,7 @@ const ProductItemsShowcase = ({ products }) => {
       >
         {products.map((product, index) => (
           <SwiperSlide key={product.id}>
-            <div className={styles.product_items_row}>
+            <div className={`${styles.product_items_row} ${blurStyle}`}>
               <ProductElement
                 product={product}
                 index={index}

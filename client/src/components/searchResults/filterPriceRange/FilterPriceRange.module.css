@@ -1,0 +1,48 @@
+.filter_container {
+  /* margin: 1rem 0; */
+  font-family: SoleilBold;
+  margin-bottom: 2rem;
+}
+
+.filter_line {
+  margin-bottom: 2rem;
+}
+
+.filter_label {
+  padding: 0.5rem 0;
+  font-family: SoleilLight;
+  font-weight: 100;
+  display: flex;
+}
+
+.filter_item {
+  margin-left: 10px;
+  padding-top: 0.5rem;
+}
+
+.filter_title {
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.input_box_left,
+.input_box_right {
+  font-family: SoleilLight;
+  padding: 4px;
+  margin: 0 10px;
+  width: 40px;
+  border: none;
+  color: black;
+}
+
+.input_box_left {
+  margin-right: 0px;
+}
+/*
+.input_box_right {
+  width: 40px; 
+}*/
+
+.price_value {
+  display: inline;
+}

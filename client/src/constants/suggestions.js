@@ -110,3 +110,11 @@ export const discover_products = [
     url: "https://cdn.pixabay.com/photo/2022/09/05/02/42/watch-7433126_1280.jpg",
   },
 ];
+
+export const images = [
+  "https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_1066,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/A11024_24Q4_Runner_Up_Protect_Natural_Black_Natural_Black_PDP_SINGLE_3Q-1000x1000.png?v=1730755214",
+  "https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_1066,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/A11024_24Q4_Runner_Up_Protect_Natural_Black_Natural_Black_PDP_SINGLE_3Q-1000x1000.png?v=1730755214",
+  "https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_1066,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/A11024_24Q4_Runner_Up_Protect_Natural_Black_Natural_Black_PDP_SINGLE_3Q-1000x1000.png?v=1730755214",
+  "https://fossil.scene7.com/is/image/FossilPartners/MBG9628400_9L?$sfcc_lifestyle_large$",
+  "https://cdn.allbirds.com/image/upload/f_auto,q_auto,b_rgb:f5f5f5,w_1066/cms/1LteTlnaCNPD4i2Qb5APH8/77c93400391ca4296475b315d22bc299/24Q1-Spring-Ch1-Site-PDP-TD-M-Desktop-1600x1600.jpg",
+];
