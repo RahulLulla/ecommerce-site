@@ -17,7 +17,7 @@
 }
 
 .elements_container {
-  width: 82%;
+  width: 80%;
   justify-items: center;
   font-family: SoleilBold;
 }
@@ -25,5 +25,5 @@
 .icons_container {
   display: flex;
   justify-content: flex-end;
-  width: 8%;
+  width: 10%;
 }

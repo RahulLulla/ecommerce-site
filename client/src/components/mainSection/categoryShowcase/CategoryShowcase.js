@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./CategoryShowcase.module.css";
-import { categories } from "../../../constants/suggestions";
+import { trendingCategoryItems as trendingItems } from "../../../constants/suggestions";
 import CategoryItemShowcase from "../categoryItemShowcase/CategoryItemShowcase";
 
 const CategoryShowcase = () => {
-  const elements = categories.map((category) => (
-    <CategoryItemShowcase category={category} key={category.categoryName} />
+  const elements = trendingItems.map((items) => (
+    <CategoryItemShowcase items={items} key={items.categoryName} />
   ));
 
   return (

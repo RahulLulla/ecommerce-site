@@ -9,7 +9,7 @@ const logout = () => {
 };
 
 const isSessionValid = () => {
-  console.log("localstorage:", localStorage.getItem("user"));
+  // console.log("localstorage:", localStorage.getItem("user"));
   const storedUser = JSON.parse(localStorage.getItem("user"));
   return storedUser && new Date().getTime() < storedUser.expiry;
 };

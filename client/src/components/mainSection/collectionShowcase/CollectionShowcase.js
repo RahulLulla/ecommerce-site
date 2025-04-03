@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./CollectionShowcase.module.css";
 import {
   featuredForHer,
@@ -11,6 +11,11 @@ import {
 import CollectionItemsShowcase from "../collectionItemsShowcase/CollectionItemsShowcase";
 
 const CollectionShowcase = () => {
+  useEffect(() => {
+    // Fetch featured, best sellers, and new arrivals data from the server
+    // This is a placeholder for the actual fetch logic
+  }, []);
+
   return (
     <div className={styles.collection_content}>
       <CollectionItemsShowcase

@@ -23,7 +23,15 @@ const ProfileDropdownButton = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className={styles.dropdown_menu}>
-        <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+        <Dropdown.Item className={styles.dropdown_menu_item}>
+          Profile
+        </Dropdown.Item>
+        <Dropdown.Item
+          className={styles.dropdown_menu_item}
+          onClick={handleLogout}
+        >
+          Logout
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

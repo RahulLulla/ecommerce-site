@@ -4,12 +4,15 @@ import FilterSection from "./filterSection/FilterSection";
 import ProductGrid from "./productGrid/ProductGrid";
 import { featuredForHer as products } from "../../constants/suggestions";
 import SortSection from "./sortSection/SortSection";
+import { useParams } from "react-router-dom";
+import { capitalizeFirstLetterOfWords } from "utils/misc";
 
 const SearchResults = () => {
-  const category_1 = "Bags";
-  const category_2 = "Women's Handbags";
-  const category_3 = "Duffel Bags";
-  const category = `${category_1} / ${category_2} / ${category_3}`;
+  const { category, subcategory, gender } = useParams();
+  const capCategory = capitalizeFirstLetterOfWords(category);
+  const capGender = capitalizeFirstLetterOfWords(gender);
+  const capSubcategory = capitalizeFirstLetterOfWords(subcategory);
+  const nav = `${capCategory} / ${capGender}'s ${capCategory} / ${capSubcategory}`;
 
   const [, setFilter] = useState({
     price: null,
@@ -19,7 +22,7 @@ const SearchResults = () => {
 
   return (
     <div className={styles.search_result_content}>
-      <h1 className={styles.search_result_title}>{category}</h1>
+      <h1 className={styles.search_result_title}>{nav}</h1>
       {/* Sorting */}
       <div className={styles.sort_products_container}>
         <SortSection />

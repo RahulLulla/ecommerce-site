@@ -1,17 +1,28 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styles from "./CategoryItemShowcase.module.css";
+import NewLink from "../../common/NewLink/NewLink";
 
-const CategoryItemShowcase = ({ category }) => {
+const CategoryItemShowcase = ({ items }) => {
   const [show, setShow] = useState(false);
+  const linkForMen = `/products/${items.mainCategory}/${"Men"}/${
+    items.categoryName
+  }`.toLowerCase();
+  const linkForWomen = `/products/${items.mainCategory}/${"Women"}/${
+    items.categoryName
+  }`.toLowerCase();
 
   const optionElements = show ? (
     <div className={styles.category_options}>
       <div className={styles.category_option}>
-        <h3 className={styles.category_option_title}>SHOP WOMEN</h3>
+        <NewLink to={linkForWomen}>
+          <h3 className={styles.category_option_title}>SHOP WOMEN</h3>
+        </NewLink>
       </div>
       <div className={styles.category_option}>
-        <h3 className={styles.category_option_title}>SHOP MEN</h3>
+        <NewLink to={linkForMen}>
+          <h3 className={styles.category_option_title}>SHOP MEN</h3>
+        </NewLink>
       </div>
     </div>
   ) : (
@@ -20,15 +31,15 @@ const CategoryItemShowcase = ({ category }) => {
 
   return (
     <div className={styles.category_container}>
-      <h1 className={styles.category_name}>{category.categoryName}</h1>
+      <h1 className={styles.category_name}>{items.categoryName}</h1>
       <div
         className={styles.category_figure}
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
         <img
-          src={category.url}
-          alt={category.categoryName}
+          src={items.url}
+          alt={items.categoryName}
           className={`${styles.category_image} ${
             show ? styles.category_image_hover : ""
           }`}

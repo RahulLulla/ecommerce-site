@@ -10,7 +10,10 @@ const RegistrationPage = lazy(() => import("../pages/RegistrationPage"));
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/products", element: <ProductsPage /> },
+  {
+    path: "/products/:category/:gender/:subcategory",
+    element: <ProductsPage />,
+  },
   { path: "/product_details", element: <ProductDetailsPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegistrationPage /> },

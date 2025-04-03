@@ -1,0 +1,18 @@
+.navbar_popper {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  box-shadow: none !important;
+}
+
+.navbar_paper {
+  margin-top: 0.5rem;
+  justify-items: center !important;
+  padding: 50px 0;
+  width: 100%;
+  box-shadow: none !important;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}

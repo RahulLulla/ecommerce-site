@@ -70,21 +70,21 @@ export const bestSellersForHer = [...featuredForHer];
 export const bestSellersForHim = [...featuredForHer];
 export const newArrivalsForHim = [...featuredForHer];
 
-export const categories = [
+export const trendingCategoryItems = [
   {
     categoryName: "Vintage Watches",
     url: "https://www.fossil.com/on/demandware.static/-/Library-Sites-FossilSharedLibrary/default/dw492e3da5/2025/SP25/set_02172025_global_refresh/top_nav/0217_TopNav_Watches.jpg",
-    price: 2012,
+    mainCategory: "Watches",
   },
   {
     categoryName: "Satchel Bags",
     url: "https://www.fossil.com/on/demandware.static/-/Library-Sites-FossilSharedLibrary/default/dwb638ea6e/2025/SP25/set_01132025_global_vday/top_nav/0113_Top_Nav_Bags.jpg",
-    price: 2012,
+    mainCategory: "Bags",
   },
   {
     url: "https://www.fossil.com/on/demandware.static/-/Library-Sites-FossilSharedLibrary/default/dw7ffdd7b9/2025/SP25/set_01132025_global_vday/top_nav/0113_Top_Nav_Wallets.jpg",
     categoryName: "Bi-fold Wallets",
-    price: 2012,
+    mainCategory: "Wallets",
   },
 ];
 
@@ -92,22 +92,32 @@ export const discover_products = [
   {
     productName: "watch1",
     url: "https://cdn.pixabay.com/photo/2016/03/05/09/05/wrist-watch-1237418_1280.jpg",
+    categoryName: "Vintage Watches",
+    mainCategory: "Watches",
   },
   {
     productName: "watch2",
     url: "https://cdn.pixabay.com/photo/2022/09/05/02/42/watch-7433126_1280.jpg",
+    categoryName: "Vintage Watches",
+    mainCategory: "Watches",
   },
   {
     productName: "watch3",
     url: "https://cdn.pixabay.com/photo/2022/09/05/02/42/watch-7433126_1280.jpg",
+    categoryName: "Vintage Watches",
+    mainCategory: "Watches",
   },
   {
     productName: "watch4",
     url: "https://cdn.pixabay.com/photo/2022/09/05/02/42/watch-7433126_1280.jpg",
+    categoryName: "Vintage Watches",
+    mainCategory: "Watches",
   },
   {
     productName: "watch5",
     url: "https://cdn.pixabay.com/photo/2022/09/05/02/42/watch-7433126_1280.jpg",
+    categoryName: "Vintage Watches",
+    mainCategory: "Watches",
   },
 ];
 

@@ -2,8 +2,7 @@ export const new_categories = [
   { gender: "Women", category: "Watches", sub_category: "Luxury Watches" },
   { gender: "Women", category: "Watches", sub_category: "Automatic Watches" },
   { gender: "Women", category: "Watches", sub_category: "Vintage Watches" },
-  { gender: "Women", category: "Watches", sub_category: "Solar Watches" },
-  { gender: "Women", category: "Watches", sub_category: "Aviator Watches" },
+  { gender: "Women", category: "Watches", sub_category: "Smart Watches" },
   { gender: "Women", category: "HandBags", sub_category: "Tote Bags" },
   { gender: "Women", category: "HandBags", sub_category: "Satchel Bags" },
   { gender: "Women", category: "HandBags", sub_category: "Crossbody Bags" },
@@ -19,8 +18,7 @@ export const new_categories = [
   { gender: "Men", category: "Watches", sub_category: "Luxury Watches" },
   { gender: "Men", category: "Watches", sub_category: "Automatic Watches" },
   { gender: "Men", category: "Watches", sub_category: "Vintage Watches" },
-  { gender: "Men", category: "Watches", sub_category: "Solar Watches" },
-  { gender: "Men", category: "Watches", sub_category: "Aviator Watches" },
+  { gender: "Men", category: "Watches", sub_category: "Smart Watches" },
   { gender: "Men", category: "Bags", sub_category: "Duffel Bags" },
   { gender: "Men", category: "Bags", sub_category: "Sling Bags" },
   { gender: "Men", category: "Bags", sub_category: "Tote Bags" },
@@ -38,95 +36,3 @@ export const new_categories = [
  * - Taking care of main nav title on the page
  * -
  */
-
-export const categories = {
-  Womens: {
-    Watches: [
-      "View All",
-      "Luxury Watches",
-      "Automatic Watches",
-      "Vintage Watches",
-    ],
-    Bags: [
-      "View All",
-      "Tote Bags",
-      "Satchel Bags",
-      "Crossbody Bags",
-      "Shoulder Bags",
-      "Clutch Bags",
-      "Backpacks Bags",
-    ],
-    Wallets: [
-      "View All",
-      "Wristlet",
-      "Clutch",
-      "Cardholders",
-      "Travel Wallets",
-    ],
-  },
-  Mens: {
-    Watches: [
-      "View All",
-      "Luxury Watches",
-      "Automatic Watches",
-      "Vintage Watches",
-    ],
-    Bags: [
-      "View All",
-      "Duffel Bags",
-      "Sling Bags",
-      "Tote Bags",
-      "Messenger Bags",
-      "Backpacks Bags",
-    ],
-    Wallets: [
-      "View All",
-      "Bi-fold",
-      "Tri-fold",
-      "Cardholders",
-      "Travel Wallets",
-    ],
-  },
-  Wallets: {
-    "Women's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-    "Men's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-  },
-  Bags: {
-    "Women's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-    "Men's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-  },
-  Watches: {
-    "Women's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-    "Men's Watches": [
-      "View All",
-      "Luxury Wallets",
-      "Leather Wallets",
-      "Travel Wallets",
-    ],
-  },
-};

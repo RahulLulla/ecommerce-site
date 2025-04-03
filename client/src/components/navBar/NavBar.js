@@ -1,24 +1,34 @@
 import React, { useState } from "react";
-import { categories } from "../../constants/categories";
+import { new_categories } from "../../constants/categories";
 import AppTitle from "./appTitle/AppTitle";
 import style from "./NavBar.module.css";
 import NavBarItems from "./navBarItems/NavBarItems";
-import SubCategoryOptions from "./subCategoryOptions/SubCategoryOptions";
+import NavBarPopper from "./navBarPopper/NavBarPopper";
 import NavBarIcon from "./navBarIcons/NavBarIcons";
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [currentCategory, setCurrentCategory] = useState(null);
+  const [currentMainCategory, setCurrentMainCategory] = useState(null);
 
   const handleMouseEnter = (event, main_category) => {
     setAnchorEl(event.currentTarget);
-    setCurrentCategory(main_category);
+    setCurrentMainCategory(main_category);
   };
 
   const handleMouseLeave = () => {
     setAnchorEl(null);
-    // setCurrentCategory(null);
+    setCurrentMainCategory(null);
   };
+
+  const genderCategories = [...new Set(new_categories.map((c) => c.gender))];
+  const brandCategories = [...new Set(new_categories.map((c) => c.category))];
+  const mainCategories = [...genderCategories, ...brandCategories];
+  const subCategoryName = genderCategories.includes(currentMainCategory)
+    ? "category"
+    : "gender";
+  const mainCategoryName = genderCategories.includes(currentMainCategory)
+    ? "gender"
+    : "category";
 
   return (
     <div id="navbar" className={`${style.navbar_main_container}`}>
@@ -27,14 +37,16 @@ const NavBar = () => {
       </div>
       <div className={style.elements_container}>
         <NavBarItems
-          main_categories={Object.keys(categories)}
+          mainCategories={mainCategories}
           handleMouseEnter={handleMouseEnter}
         />
-        <SubCategoryOptions
+
+        <NavBarPopper
           anchorEl={anchorEl}
-          categories={categories}
-          currentCategory={currentCategory}
+          currentMainCategory={currentMainCategory}
           handleMouseLeave={handleMouseLeave}
+          subCategoryName={subCategoryName}
+          mainCategoryName={mainCategoryName}
         />
       </div>
       <div className={style.icons_container}>
