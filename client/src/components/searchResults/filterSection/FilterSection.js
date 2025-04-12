@@ -1,21 +1,38 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./FilterSection.module.css";
 import FilterOptions from "../filterOptions/FilterOptions";
 import FilterPriceRange from "../filterPriceRange/FilterPriceRange";
 
-const FilterSection = ({ onFilterChange }) => {
-  const priceRange = [0, 1000];
-  const materialOptions = ["Cotton", "Leather", "Denim", "Polyester"];
-  const colorOptions = ["Red", "Blue", "Green", "Black", "White"];
+const FilterSection = ({ filter, filteredProducts, onFilterChange }) => {
+  const [priceRange, setPriceRange] = useState([0, 0]);
+  const [materialOptions, setMaterialOptions] = useState([]);
+  const [colorOptions, setColorOptions] = useState([]);
 
-  const [price, setPrice] = useState(priceRange);
-  const [materials, setMaterials] = useState([]);
-  const [colors, setColors] = useState([]);
+  useEffect(() => {
+    if (filteredProducts.length === 0) return;
+
+    const prices = filteredProducts.map((product) => product.price);
+    const minPrice = Math.min(...prices);
+    const maxPrice = Math.max(...prices);
+    setPriceRange([minPrice, maxPrice]);
+
+    const materials = filteredProducts.map((product) => product.material);
+    const uniqueMaterials = [...new Set(materials)];
+    setMaterialOptions(uniqueMaterials.sort((a, b) => a.localeCompare(b)));
+
+    const colors = filteredProducts.map((product) => product.color);
+    const uniqueColors = [...new Set(colors)];
+    setColorOptions(uniqueColors.sort((a, b) => a.localeCompare(b)));
+  }, [filteredProducts]);
+
+  // Fix This
+  // useEffect(() => {
+  //   setPrice(priceRange);
+  // }, [priceRange]);
 
   const handlePriceChange = (value) => {
-    setPrice(value);
     onFilterChange((prev) => ({
       ...prev,
       price: value,
@@ -23,26 +40,20 @@ const FilterSection = ({ onFilterChange }) => {
   };
 
   const handleMaterialChange = (value) => {
-    setMaterials((prev) =>
-      prev.includes(value) ? prev.filter((m) => m !== value) : [...prev, value]
-    );
     onFilterChange((prev) => ({
       ...prev,
       materials: prev.materials.includes(value)
-        ? materials.filter((m) => m !== value)
-        : [...materials, value],
+        ? prev.materials.filter((m) => m !== value)
+        : [...prev.materials, value],
     }));
   };
 
   const handleColorChange = (value) => {
-    setColors((prev) =>
-      prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
-    );
     onFilterChange((prev) => ({
       ...prev,
       colors: prev.colors.includes(value)
-        ? colors.filter((c) => c !== value)
-        : [...colors, value],
+        ? prev.colors.filter((c) => c !== value)
+        : [...prev.colors, value],
     }));
   };
 
@@ -50,7 +61,7 @@ const FilterSection = ({ onFilterChange }) => {
     <div className={styles.filter_content}>
       <FilterPriceRange
         filterTitle={"Price"}
-        price={price}
+        price={filter.price}
         priceRange={priceRange}
         handleOptionChange={handlePriceChange}
       />
@@ -58,13 +69,13 @@ const FilterSection = ({ onFilterChange }) => {
         filterTitle={"Material"}
         optionsArray={materialOptions}
         handleOptionChange={handleMaterialChange}
-        checkCondition={(option) => materials.includes(option)}
+        checkCondition={(option) => filter.materials.includes(option)}
       />
       <FilterOptions
         filterTitle={"Colour"}
         optionsArray={colorOptions}
         handleOptionChange={handleColorChange}
-        checkCondition={(option) => colors.includes(option)}
+        checkCondition={(option) => filter.colors.includes(option)}
       />
     </div>
   );

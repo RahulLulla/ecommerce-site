@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProductShowcase.module.css";
 import ProductItemsShowcase from "../../common/productItemsShowcase/ProductItemsShowcase";
 
 const ProductShowcase = ({ featured, bestSellers, newArrivals }) => {
   const options = ["Best Sellers", "Featured", "New Arrivals"];
   const [navOption, setNavOption] = useState(0);
-  const [products, setProducts] = useState(bestSellers);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(bestSellers);
+  }, [bestSellers, products]);
 
   const handleNavOptions = (index) => {
     setNavOption(index);

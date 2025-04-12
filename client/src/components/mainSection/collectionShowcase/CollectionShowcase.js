@@ -1,19 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CollectionShowcase.module.css";
-import {
-  featuredForHer,
-  featuredForHim,
-  bestSellersForHer,
-  bestSellersForHim,
-  newArrivalsForHer,
-  newArrivalsForHim,
-} from "../../../constants/suggestions";
 import CollectionItemsShowcase from "../collectionItemsShowcase/CollectionItemsShowcase";
+import {
+  fetch_best_sellers,
+  fetch_new_arrivals,
+  fetch_featured,
+} from "./fetch_collection_requests";
 
 const CollectionShowcase = () => {
+  const [bestSellersForHer, setBestSellersForHer] = useState([]);
+  const [bestSellersForHim, setBestSellersForHim] = useState([]);
+  const [featuredForHer, setFeaturedForHer] = useState([]);
+  const [featuredForHim, setFeaturedForHim] = useState([]);
+  const [newArrivalsForHer, setNewArrivalsForHer] = useState([]);
+  const [newArrivalsForHim, setNewArrivalsForHim] = useState([]);
+
   useEffect(() => {
-    // Fetch featured, best sellers, and new arrivals data from the server
-    // This is a placeholder for the actual fetch logic
+    fetch_best_sellers().then((data) => {
+      setBestSellersForHer(data.filter((item) => item.gender !== "men"));
+      setBestSellersForHim(data.filter((item) => item.gender === "men"));
+    });
+    fetch_featured().then((data) => {
+      setFeaturedForHer(data.filter((item) => item.gender !== "men"));
+      setFeaturedForHim(data.filter((item) => item.gender === "men"));
+    });
+    fetch_new_arrivals().then((data) => {
+      setNewArrivalsForHer(data.filter((item) => item.gender !== "men"));
+      setNewArrivalsForHim(data.filter((item) => item.gender === "men"));
+    });
   }, []);
 
   return (

@@ -2,17 +2,12 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
 import { formatRupee } from "../../../utils/formatRupee";
-import { Link } from "react-router-dom";
+import NewLink from "../NewLink/NewLink";
 
 const ProductCard = ({ product, isElementVisible }) => {
   const visibilityStyle = isElementVisible ? styles.appear : styles.disappear;
-
   return (
-    <Link
-      to="/product_details"
-      style={{ textDecoration: "none" }}
-      onClick={() => window.scrollTo(0, 0)}
-    >
+    <NewLink to="/product_details">
       <div className={`${styles.product_card} ${visibilityStyle}`}>
         <span className={styles.product_image_content}>
           <img
@@ -28,7 +23,7 @@ const ProductCard = ({ product, isElementVisible }) => {
           </h3>
         </div>
       </div>
-    </Link>
+    </NewLink>
   );
 };
 

@@ -44,7 +44,7 @@ const ProductItemsShowcase = ({ products }) => {
         scrollbar={{ draggable: true, dragClass: "swiper-scrollbar-drag" }}
       >
         {products.map((product, index) => (
-          <SwiperSlide key={product.id}>
+          <SwiperSlide key={product.productId}>
             <div className={`${styles.product_items_row} ${blurStyle}`}>
               <ProductElement
                 product={product}

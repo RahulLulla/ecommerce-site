@@ -14,7 +14,10 @@ const routes = [
     path: "/products/:category/:gender/:subcategory",
     element: <ProductsPage />,
   },
-  { path: "/product_details", element: <ProductDetailsPage /> },
+  {
+    path: "/products/:category/:gender/:subcategory/:productId",
+    element: <ProductDetailsPage />,
+  },
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegistrationPage /> },
   { path: "*", element: <NotFound /> },

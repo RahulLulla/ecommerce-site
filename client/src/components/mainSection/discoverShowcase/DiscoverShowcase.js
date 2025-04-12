@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./DiscoverShowcase.module.css";
-import { discover_products } from "../../../constants/suggestions";
 import DiscoverItemShowcase from "../discoverItemShowcase/DiscoverItemShowcase";
+import { fetch_discover_products } from "./fetch_discover_products_requests";
 
 const DiscoverShowcase = () => {
+  const [discover_products, setDiscoverProducts] = useState([]);
   const elements = discover_products.map((product, index) => {
     return (
       <DiscoverItemShowcase
@@ -13,6 +14,14 @@ const DiscoverShowcase = () => {
       />
     );
   });
+
+  useEffect(() => {
+    fetch_discover_products()
+      .then((data) => setDiscoverProducts(data))
+      .catch((error) => {
+        console.error("Error fetching trending categories:", error);
+      });
+  }, []);
 
   return (
     <div className={styles.discover_content}>

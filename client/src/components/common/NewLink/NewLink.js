@@ -5,7 +5,11 @@ import styles from "./NewLink.module.css";
 
 const NewLink = ({ to, children }) => {
   return (
-    <Link to={to} className={styles.link_style}>
+    <Link
+      to={to}
+      className={styles.link_style}
+      onClick={() => window.scrollTo(0, 0)}
+    >
       {children}
     </Link>
   );

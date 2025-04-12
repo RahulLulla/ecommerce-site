@@ -1,17 +1,28 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styles from "./DiscoverItemShowcase.module.css";
+import NewLink from "../../common/NewLink/NewLink";
 
 const DiscoverItemShowcase = ({ product, index }) => {
   const [show, setShow] = useState(false);
+  const linkForMen = `/products/${product.mainCategory}/${"Men"}/${
+    product.categoryName
+  }`.toLowerCase();
+  const linkForWomen = `/products/${product.mainCategory}/${"Women"}/${
+    product.categoryName
+  }`.toLowerCase();
 
   const optionElements = show ? (
     <div className={styles.category_options}>
       <div className={styles.category_option}>
-        <h3 className={styles.category_option_title}>SHOP WOMEN</h3>
+        <NewLink to={linkForWomen}>
+          <h3 className={styles.category_option_title}>SHOP WOMEN</h3>
+        </NewLink>
       </div>
       <div className={styles.category_option}>
-        <h3 className={styles.category_option_title}>SHOP MEN</h3>
+        <NewLink to={linkForMen}>
+          <h3 className={styles.category_option_title}>SHOP MEN</h3>
+        </NewLink>
       </div>
     </div>
   ) : (
