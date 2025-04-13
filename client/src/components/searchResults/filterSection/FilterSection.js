@@ -6,17 +6,24 @@ import FilterOptions from "../filterOptions/FilterOptions";
 import FilterPriceRange from "../filterPriceRange/FilterPriceRange";
 
 const FilterSection = ({ filter, filteredProducts, onFilterChange }) => {
-  const [priceRange, setPriceRange] = useState([0, 0]);
+  const [priceRange, setPriceRange] = useState([]);
   const [materialOptions, setMaterialOptions] = useState([]);
   const [colorOptions, setColorOptions] = useState([]);
 
   useEffect(() => {
     if (filteredProducts.length === 0) return;
 
-    const prices = filteredProducts.map((product) => product.price);
-    const minPrice = Math.min(...prices);
-    const maxPrice = Math.max(...prices);
-    setPriceRange([minPrice, maxPrice]);
+    if (priceRange.length === 0) {
+      const prices = filteredProducts.map((product) => product.price);
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      setPriceRange([minPrice, maxPrice]);
+
+      onFilterChange((prev) => ({
+        ...prev,
+        price: [minPrice, maxPrice],
+      }));
+    }
 
     const materials = filteredProducts.map((product) => product.material);
     const uniqueMaterials = [...new Set(materials)];
@@ -25,12 +32,7 @@ const FilterSection = ({ filter, filteredProducts, onFilterChange }) => {
     const colors = filteredProducts.map((product) => product.color);
     const uniqueColors = [...new Set(colors)];
     setColorOptions(uniqueColors.sort((a, b) => a.localeCompare(b)));
-  }, [filteredProducts]);
-
-  // Fix This
-  // useEffect(() => {
-  //   setPrice(priceRange);
-  // }, [priceRange]);
+  }, [filteredProducts, onFilterChange, priceRange.length]);
 
   const handlePriceChange = (value) => {
     onFilterChange((prev) => ({

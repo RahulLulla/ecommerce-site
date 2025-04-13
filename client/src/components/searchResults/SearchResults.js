@@ -20,7 +20,11 @@ const SearchResults = () => {
   return (
     <div className={styles.search_result_content}>
       <SearchResultNav />
-      <ProductBrowse products={products} />
+      {products.length > 0 ? (
+        <ProductBrowse products={products} />
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 };

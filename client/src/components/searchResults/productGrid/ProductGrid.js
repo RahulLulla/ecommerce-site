@@ -4,8 +4,6 @@ import styles from "./ProductGrid.module.css";
 import ProductItem from "../../common/productItem/ProductItem";
 
 const ProductGrid = ({ products }) => {
-  console.log("Rerendering ProductGrid with products:", products);
-
   const productItems = products.map((product, i) => (
     <ProductItem key={"product" + i} product={product} />
   ));
