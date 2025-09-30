@@ -2,7 +2,7 @@ import React from "react";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./ProfileDropdownButton.module.css";
-import { logout } from "utils/authentication";
+import { logout } from "@/utils/authentication.jsx";
 import { useNavigate } from "react-router-dom";
 
 const ProfileDropdownButton = () => {

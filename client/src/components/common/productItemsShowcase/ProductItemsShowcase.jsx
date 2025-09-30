@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useRef, useState } from "react";
 import ProductElement from "../productElement/ProductElement";
 import { useIntersection } from "react-use";

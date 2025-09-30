@@ -65,11 +65,15 @@ const ProductGallery = () => {
             </SwiperSlide>
           ))}
           <button
-            className={`${"swiper-button-prev"} ${styles.slide_button}`}
+            className={`${"swiper-button-prev"} ${styles.slide_button} ${
+              styles.prev_button
+            }`}
             onClick={handlePrevButton}
           />
           <button
-            className={`${"swiper-button-next"} ${styles.slide_button}`}
+            className={`${"swiper-button-next"} ${styles.slide_button} ${
+              styles.next_button
+            }`}
             onClick={handleNextButton}
           />
         </Swiper>

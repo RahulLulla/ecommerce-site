@@ -2,3 +2,4 @@ node_modules
 database_info.json
 miscellanious
 .env
+.test

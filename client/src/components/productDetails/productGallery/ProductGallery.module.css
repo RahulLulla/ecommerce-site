@@ -64,3 +64,21 @@
 .slide_button::after {
   font-size: large;
 }
+
+.prev_button::after,
+.next_button::after {
+  width: 30px;
+  height: 30px;
+  font-weight: lighter;
+  font-size: 18px;
+  color: rgb(80, 76, 76);
+  transform: scale(1.6);
+}
+
+.prev_button::after {
+  content: "<";
+}
+
+.next_button::after {
+  content: ">";
+}

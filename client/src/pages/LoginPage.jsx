@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { useState } from "react";
 import { TextField, Button, Typography, Box, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { styles } from "./LoginRegistrationStyles";
-import { login } from "utils/authentication";
+import { login } from "@/utils/authentication";
 
 const LoginPage = () => {
   const navigate = useNavigate();

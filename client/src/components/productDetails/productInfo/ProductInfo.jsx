@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./ProductInfo.module.css";
-import { formatRupee } from "../../../utils/formatRupee";
+import { formatRupee } from "@/utils/formatRupee";
 import ProductSpecs from "../productSpecs/ProductSpecs";
 import Button from "@mui/material/Button";
 import { addtoCartStyle, buyNowStyle } from "./ProductInfoStyle";
 import { useSelector } from "react-redux";
-import { getCurrentProduct } from "../../../features/currentProduct/currentProductSlice";
+import { getCurrentProduct } from "@/features/currentProduct/currentProductSlice";
 
 const ProductInfo = () => {
   const product = useSelector(getCurrentProduct);

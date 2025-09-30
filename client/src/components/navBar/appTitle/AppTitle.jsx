@@ -19,7 +19,7 @@ const AppTitle = () => {
             />
           </section>
           <section className={styles.app_title}>
-            <h1>Celestine</h1>
+            <h1 className={styles.app_title_text}>Celestine</h1>
           </section>
         </Link>
       </div>

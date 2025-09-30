@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import { Popper, Paper, Grid2 } from "@mui/material";
+import { Popper, Paper, Grid } from "@mui/material";
 import styles from "./NavBarPopper.module.css";
 import React from "react";
 import { new_categories } from "../../../constants/categories";
@@ -26,12 +25,12 @@ const NavBarPopper = ({
       className={styles.navbar_popper}
     >
       <Paper className={styles.navbar_paper}>
-        <Grid2 container spacing={15}>
+        <Grid container spacing={15}>
           <NavBarGrid
             groupedByMainCategory={groupedByMainCategory}
             subCategoryName={subCategoryName}
           />
-        </Grid2>
+        </Grid>
       </Paper>
     </Popper>
   );

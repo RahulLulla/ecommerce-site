@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import styles from "./ProductShowcase.module.css";
 import ProductItemsShowcase from "../../common/productItemsShowcase/ProductItemsShowcase";
@@ -27,7 +26,7 @@ const ProductShowcase = ({ featured, bestSellers, newArrivals }) => {
         className={`${styles.nav_title} ${focusStyle}`}
         onClick={() => handleNavOptions(index)}
       >
-        <h1>{option}</h1>
+        <h1 className={styles.options_title}>{option}</h1>
       </span>
     );
   });

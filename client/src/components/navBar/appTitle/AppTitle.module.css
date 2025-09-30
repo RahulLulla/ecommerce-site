@@ -1,6 +1,7 @@
 .app_title_container {
   color: inherit;
   display: flex;
+  margin-bottom: 15px;
 }
 
 .app_image {
@@ -16,6 +17,9 @@
   margin-left: 10px;
   margin-top: 11%;
   display: inline;
+}
+
+.app_title_text {
   text-transform: uppercase;
   font-family: SoleilBold;
   font-size: 18px;

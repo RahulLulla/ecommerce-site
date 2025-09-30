@@ -9,7 +9,7 @@
 }
 
 .filter_label {
-  padding: 0.5rem 0;
+  padding: 0.1rem 0 0.5rem;
   font-family: SoleilLight;
   font-weight: 100;
   display: flex;
@@ -17,11 +17,13 @@
 
 .filter_item {
   margin-left: 10px;
-  padding-top: 0.5rem;
+  /* background-color: red; */
+  padding: 0.1rem 0 0.7rem;
 }
 
 .filter_title {
   padding: 0.5rem 0;
+  font-size: inherit;
   text-transform: uppercase;
 }
 

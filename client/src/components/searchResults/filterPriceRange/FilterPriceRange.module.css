@@ -8,6 +8,10 @@
   margin-bottom: 2rem;
 }
 
+.price_range {
+  font-size: inherit;
+}
+
 .filter_label {
   padding: 0.5rem 0;
   font-family: SoleilLight;
@@ -23,6 +27,7 @@
 .filter_title {
   padding: 0.5rem 0;
   text-transform: uppercase;
+  font-size: inherit;
 }
 
 .input_box_left,

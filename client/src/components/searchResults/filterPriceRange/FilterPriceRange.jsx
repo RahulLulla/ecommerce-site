@@ -29,7 +29,7 @@ const FilterPriceRange = ({
         min={priceRange[0]}
         max={priceRange[1]}
       />
-      <h1>
+      <h1 className={styles.price_range}>
         From
         <div className={styles.price_value}>
           <input

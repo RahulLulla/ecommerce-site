@@ -2,9 +2,17 @@
   border-radius: 8px;
   padding: 0;
   margin: 0;
+  background-color: none;
+  border: none;
+}
+
+.dropdown_toggle {
+  background-color: transparent;
+  border: none;
 }
 
 .dropdown_toggle::after {
+  background-color: transparent;
   content: none;
 }
 
@@ -21,5 +29,4 @@
 }
 
 .dropdown_menu_item:hover {
-  background-color: aliceblue;
 }

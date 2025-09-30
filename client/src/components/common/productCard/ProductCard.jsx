@@ -1,13 +1,16 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import styles from "./ProductCard.module.css";
-import { formatRupee } from "../../../utils/formatRupee";
+import { formatRupee } from "@/utils/formatRupee";
 import NewLink from "../NewLink/NewLink";
 
 const ProductCard = ({ product, isElementVisible }) => {
   const visibilityStyle = isElementVisible ? styles.appear : styles.disappear;
+  const { mainCategory, gender, subCategory, productId } = product;
+
   return (
-    <NewLink to="/product_details">
+    <NewLink
+      to={`/products/${mainCategory}/${gender}/${subCategory}/${productId}`}
+    >
       <div className={`${styles.product_card} ${visibilityStyle}`}>
         <span className={styles.product_image_content}>
           <img

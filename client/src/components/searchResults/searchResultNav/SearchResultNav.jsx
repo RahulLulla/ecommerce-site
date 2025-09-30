@@ -1,5 +1,5 @@
 import React from "react";
-import { capitalizeFirstLetterOfWords } from "utils/misc";
+import { capitalizeFirstLetterOfWords } from "@/utils/misc";
 import { useParams } from "react-router-dom";
 import styles from "./SearchResultNav.module.css";
 

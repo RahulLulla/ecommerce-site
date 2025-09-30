@@ -1,4 +1,4 @@
-import { MenuItem, Grid2, ListItem } from "@mui/material";
+import { MenuItem, Grid, ListItem } from "@mui/material";
 import styles from "./NavBarGrid.module.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const NavBarGrid = ({ groupedByMainCategory, subCategoryName }) => {
     );
 
     return (
-      <Grid2 key={index} className={styles.navbar_subcategory_list}>
+      <Grid key={index} className={styles.navbar_subcategory_list}>
         <ListItem className={styles.navbar_subcategory_header}>
           {subCategory}
         </ListItem>
@@ -38,7 +38,7 @@ const NavBarGrid = ({ groupedByMainCategory, subCategoryName }) => {
             </Link>
           </MenuItem>
         ))}
-      </Grid2>
+      </Grid>
     );
   });
 };

@@ -33,6 +33,7 @@
 .footer_link,
 .footer_font {
   color: white !important;
+  font-size: inherit;
 }
 
 .social_icon {

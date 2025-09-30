@@ -2,7 +2,6 @@
   display: flex;
   padding: 2rem 2rem;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 .navbar_main_container:hover,
@@ -26,4 +25,5 @@
   display: flex;
   justify-content: flex-end;
   width: 10%;
+  margin-bottom: 15px;
 }

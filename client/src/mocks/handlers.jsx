@@ -3,10 +3,10 @@ import {
   best_sellers,
   featured,
   new_arrivals,
-} from "./data/mock_collection_data";
-import { trending_category_items } from "./data/mock_trending_data";
-import { discover_products } from "./data/mock_discover_data";
-import { all_products } from "./data/mock_search_result_data";
+} from "./data/mock_collection_data.jsx";
+import { trending_category_items } from "./data/mock_trending_data.jsx";
+import { discover_products } from "./data/mock_discover_data.jsx";
+import { all_products } from "./data/mock_search_result_data.jsx";
 
 export const handlers = [
   http.get("/api/get_collections/new_arrivals", () => {
@@ -30,6 +30,7 @@ export const handlers = [
   }),
 
   http.get("/api/search_results", ({ request }) => {
+    console.log("Request URL:", request.url);
     const url = new URL(request.url);
     const category = url.searchParams.get("category");
     const subcategory = url.searchParams.get("subcategory");

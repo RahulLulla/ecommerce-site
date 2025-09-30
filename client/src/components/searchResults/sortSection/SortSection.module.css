@@ -6,5 +6,10 @@
 .sort_selection_result {
   align-content: center;
   font-family: "SoleilLight";
-  margin-right: 20px;
+  margin: 0 20px 0 0;
+}
+
+.sort_result_title {
+  font-size: 1rem;
+  margin-top: 10px;
 }

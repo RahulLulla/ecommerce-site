@@ -22,7 +22,7 @@ const SortSection = ({
   return (
     <div className={styles.sort_selection_box}>
       <div className={styles.sort_selection_result}>
-        <h1>{numberOfSearchResults} Results</h1>
+        <h1 className={styles.sort_result_title}>{numberOfSearchResults} Results</h1>
       </div>
       <Box>
         <FormControl sx={{ width: 180 }}>

@@ -1,12 +1,13 @@
 .navbar_icon_container {
   display: flex;
-  height: 40px;
   align-items: center;
+  vertical-align: center;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .navbar_cart_icon {
-  margin-left: 20px;
+  margin: 0 0 0 20px;
 }
 
 .navbar_cart_icon:hover,
@@ -19,4 +20,9 @@
   font-size: 0.9rem;
   font-family: "SoleilBold";
   text-transform: uppercase;
+}
+
+.navbar_signin_title {
+  margin: 0 10px 0 0;
+  font-size: inherit;
 }

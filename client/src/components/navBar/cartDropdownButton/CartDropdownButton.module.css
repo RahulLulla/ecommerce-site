@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+.dropdown_toggle {
+  background-color: transparent;
+  border: none;
+}
+
 .dropdown_toggle::after {
   content: none;
 }

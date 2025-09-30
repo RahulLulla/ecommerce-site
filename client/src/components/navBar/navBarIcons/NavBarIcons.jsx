@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./NavBarIcons.module.css";
 import { Link } from "react-router-dom";
-import { handleSessionExpiry } from "utils/authentication";
+import { handleSessionExpiry } from "@/utils/authentication";
 import ProfileDropdownButton from "../profileDropdownButton/ProfileDropdownButton";
 import CartDropdownButton from "../cartDropdownButton/CartDropdownButton";
 
@@ -17,7 +17,7 @@ const NavBarIcon = () => {
   ) : (
     <div className={styles.navbar_signin}>
       <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-        <h1>Sign In</h1>
+        <h1 className={styles.navbar_signin_title}>Sign In</h1>
       </Link>
     </div>
   );
@@ -28,6 +28,7 @@ const NavBarIcon = () => {
       <div className={styles.navbar_cart_icon}>
         <CartDropdownButton />
       </div>
+      <></>
     </div>
   );
 };

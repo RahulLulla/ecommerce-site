@@ -1,13 +1,13 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import styles from "./ProductItem.module.css";
-import { formatRupee } from "../../../utils/formatRupee";
+import { formatRupee } from "@/utils/formatRupee";
 import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
+  const { mainCategory, gender, subCategory, productId } = product;
   return (
     <Link
-      to="/product_details"
+      to={`/products/${mainCategory}/${gender}/${subCategory}/${productId}`}
       style={{ textDecoration: "none" }}
       onClick={() => window.scrollTo(0, 0)}
     >
