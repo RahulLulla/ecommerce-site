@@ -5,6 +5,9 @@ const urls = [
     color: "Gold",
     material: "Leather",
     url: "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-zulu-time-l3-802-5-53-9-1733407839-thumbnail.png?w=360",
+    gender: "women",
+    mainCategory: "watches",
+    subCategory: "automatic watches",
   },
   {
     productName: "ABC Three-Hand Silver Steel Watch",
@@ -12,6 +15,9 @@ const urls = [
     color: "Silver",
     material: "Steel",
     url: "https://5.imimg.com/data5/SELLER/Default/2022/10/KJ/JJ/HE/20506059/e-commerce-wrist-watch-photography-500x500.JPG",
+    gender: "women",
+    mainCategory: "watches",
+    subCategory: "automatic watches",
   },
   {
     productName: "PQR Three-Hand Silver Stainless Steel Watch",
@@ -19,6 +25,9 @@ const urls = [
     color: "Silver",
     material: "Stainless Steel",
     url: "https://5.imimg.com/data5/SELLER/Default/2022/10/JE/QE/PL/20506059/e-commerce-wrist-watch-photography.JPG",
+    gender: "women",
+    mainCategory: "watches",
+    subCategory: "automatic watches",
   },
   {
     productName: "Jason Three-Hand Black Quartz Watch",
@@ -26,6 +35,9 @@ const urls = [
     color: "Black",
     material: "Quartz",
     url: "https://i0.wp.com/tomcrowl.com/wp-content/uploads/2024/02/E-commerce-Watch-Image.jpg?fit=1080%2C1080&ssl=1",
+    gender: "women",
+    mainCategory: "watches",
+    subCategory: "automatic watches",
   },
   {
     productName: "Luxury Black Quartz Watch",
@@ -33,17 +45,23 @@ const urls = [
     color: "Black",
     material: "Quartz",
     url: "https://freshsparks.com/wp-content/uploads/2014/10/project_image_icon_TIS.jpg",
+    gender: "women",
+    mainCategory: "watches",
+    subCategory: "automatic watches",
   },
 ];
 
 export const all_products = [...Array(15)].map((_, index) => {
-  const randomElement = (index = urls[Math.floor(Math.random() * urls.length)]);
+  const randomElement = urls[Math.floor(Math.random() * urls.length)];
   return {
-    id: index + 1,
+    productId: index + 1,
     productName: randomElement.productName,
     price: randomElement.price,
     url: randomElement.url,
     color: randomElement.color,
     material: randomElement.material,
+    gender: randomElement.gender,
+    mainCategory: randomElement.mainCategory,
+    subCategory: randomElement.subCategory,
   };
 });

@@ -4,11 +4,20 @@ import { formatRupee } from "@/utils/formatRupee";
 import ProductSpecs from "../productSpecs/ProductSpecs";
 import Button from "@mui/material/Button";
 import { addtoCartStyle, buyNowStyle } from "./ProductInfoStyle";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getCurrentProduct } from "@/features/currentProduct/currentProductSlice";
+import { addToCart, clearCart } from "@/features/cart/cartSlice";
 
 const ProductInfo = () => {
   const product = useSelector(getCurrentProduct);
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    dispatch(addToCart(product));
+  };
+
+  const checkoutHandler = () => {
+    dispatch(clearCart());
+  };
 
   return (
     <div className={styles.product_info_content}>
@@ -22,14 +31,18 @@ const ProductInfo = () => {
       </div>
       <div className={styles.product_info_desc_box}>
         <h2 className={styles.product_info_price}>
-          MRP ${formatRupee(product.productPrice)}
+          MRP {formatRupee(product.productPrice)}
         </h2>
       </div>
       <div className={styles.product_info_purchase_box}>
-        <Button variant="contained" sx={addtoCartStyle}>
+        <Button
+          variant="contained"
+          sx={addtoCartStyle}
+          onClick={addToCartHandler}
+        >
           Add to Cart
         </Button>
-        <Button variant="contained" sx={buyNowStyle}>
+        <Button variant="contained" sx={buyNowStyle} onClick={checkoutHandler}>
           Buy Now
         </Button>
       </div>

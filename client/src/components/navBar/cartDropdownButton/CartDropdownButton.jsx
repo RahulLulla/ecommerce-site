@@ -2,7 +2,8 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./CartDropdownButton.module.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
+import Cart from "@/components/navBar/cart/Cart";
+// client\src\components\navBar\cart\Cart.jsx
 const CartDropdownButton = () => {
   return (
     <Dropdown className={styles.dropdown_container}>
@@ -14,7 +15,9 @@ const CartDropdownButton = () => {
         <ShoppingCartOutlinedIcon />
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className={styles.dropdown_menu}></Dropdown.Menu>
+      <Dropdown.Menu className={styles.dropdown_menu}>
+        <Cart />
+      </Dropdown.Menu>
     </Dropdown>
   );
 };

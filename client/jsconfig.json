@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@store/*": ["store/*"],
-      "@hooks/*": ["hooks/*"],
-      "@features/*": ["features/*"],
-      "@assets/*": ["assets/*"]
+      "@/*": ["src/*"]
+      // "@store/*": ["store/*"],
+      // "@hooks/*": ["hooks/*"],
+      // "@features/*": ["src/features/*"],
+      // "@assets/*": ["assets/*"]
     }
-  },
-  "include": ["src"]
+  }
+  // "include": ["src"]
 }
