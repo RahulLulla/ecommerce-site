@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecommerce-backend
+  template:
+    metadata:
+      labels:
+        app: ecommerce-backend
+    spec:
+      containers:
+        - name: backend
+          image: ecommerce-backend:latest
+          ports:
+            - containerPort: 5000
+          # livenessProbe:
+          #   httpGet:
+          #     path: /api/health
+          #     port: 5000
+          # readinessProbe:
+          #   httpGet:
+
+          # Use kubernetes secrets for sensitive information in production instead of environment variables
+          env:
+            - name: PORT
+              value: "5000"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_HOST
+              value: "localhost"
+            - name: DB_DATABASE
+              value: "ecommerce_site"
+            - name: DB_PASSWORD
+              value: "postgres"
+
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-backend-service
+spec:
+  selector:
+    app: ecommerce-backend 
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
+

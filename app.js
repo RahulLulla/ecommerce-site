@@ -5,7 +5,10 @@ const cors = require("cors");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const path = require("path");
-require("dotenv").config();
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 global.rootPath = path.resolve(__dirname);
 
 const session = require("express-session");
@@ -58,7 +61,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     store,
-  })
+  }),
 );
 
 // Initialize Passport
@@ -67,6 +70,10 @@ app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.redirect("/login");
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
 });
 
 //Routes

@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./Dockerfile_backend
+    name: ecommerce-backend
+    ports:
+      - "5000:5000"
+    # Use docker secrets for sensitive information in production instead of environment variables
+    environment:
+      - PORT=5000
+      - DB_USER=postgres
+      - DB_HOST=localhost
+      - DB_DATABASE=ecommerce_site
+      - DB_PASSWORD=postgres
+
+  frontend:
+    build: ./Dockerfile_frontend
+    name: ecommerce-frontend
+    ports:
+      - "3000:80" # Map host port 3000 to Nginx port 80
+    depends_on:
+      - backend
