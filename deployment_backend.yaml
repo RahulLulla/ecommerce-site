@@ -52,10 +52,9 @@ metadata:
   name: ecommerce-backend-service
 spec:
   selector:
-    app: ecommerce-backend 
+    app: ecommerce-backend
   ports:
     - protocol: TCP
       port: 5000
       targetPort: 5000
   type: ClusterIP
-

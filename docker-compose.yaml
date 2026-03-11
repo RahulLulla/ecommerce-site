@@ -11,6 +11,21 @@ services:
       - DB_HOST=localhost
       - DB_DATABASE=ecommerce_site
       - DB_PASSWORD=postgres
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:latest
+    name: ecommerce-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ecommerce_site
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
   frontend:
     build: ./Dockerfile_frontend

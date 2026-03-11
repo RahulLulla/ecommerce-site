@@ -1,7 +1,7 @@
 const processQuery = require("./query");
 const fs = require("fs");
 
-let get_cart_details_query;
+let get_cart_details_query = "";
 fs.readFile("src/db/getCardDetails.sql", "utf-8", (err, data) => {
   if (err) console.error("Could not read file", err);
   get_cart_details_query = data;
